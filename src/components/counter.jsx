@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, {Component} from 'react';
 
-export const Counter = () => {
-    const [increase, setIncrease] = useState(0);
-
-    function increasingNumber(){
-        return setIncrease(increase+1);
+class Counter extends Component{
+    state = {
+        count: 0,
+        imgUrl: 'https://picsum.photos/200'
+    };
+    render(){
+        return (
+            <React.Fragment>
+                <img src={ this.state.imgUrl } alt="" />
+                <span className='badge badge-warning m-2'>{ this.counter() }</span>
+                <button className='btn btn-primary'>Increment</button>
+            </React.Fragment>
+        )
     }
 
-    return(
-        <header>
-            <h1>Counter element: {increase}</h1>
-            <button onClick={increasingNumber}>Increment</button>
-        </header>
-    )
+    counter(){
+        return this.state.count === 0 ? 'Zero' : this.state.count;
+    }
 }
 
 export default Counter;
