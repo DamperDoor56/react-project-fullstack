@@ -30,6 +30,7 @@ class Counter extends Component{
         console.log('props', this.props);
         return (
             <React.Fragment>
+                { this.props.children } @  { this.props.CounId }
                 <span style={{
                     fontSize: 30
                 }} className={this.GetClass()}>{ this.counter() }</span>
