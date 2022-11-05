@@ -25,7 +25,6 @@ class Counter extends Component{
             count: this.state.count + 1
         })
     }
-    
     render(){
         console.log('props', this.props);
         return (
@@ -35,8 +34,9 @@ class Counter extends Component{
                     fontSize: 30
                 }} className={this.GetClass()}>{ this.counter() }</span>
 
-                <button onClick={() => { this.handleIncrement({id:1}) }} className='btn btn-primary'>Increment</button>
-                
+                <button onClick={ this.handleIncrement } className='btn btn-primary'>Increment</button>
+                <button onClick={ () => this.props.OnDelete(this.props.CounId) } className='btn btn-danger btn-sm m-2'>Delete</button>
+
                 { this.state.tags.length === 0 ? <p>they are no tags</p> :
                 <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul> 
                 }
