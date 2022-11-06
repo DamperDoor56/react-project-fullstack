@@ -10,6 +10,7 @@ class App extends Component {
         return(
             <React.Fragment>
                 <Nav/>
+                <Counters />
             </React.Fragment>
         )
     }
