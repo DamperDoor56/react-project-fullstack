@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Routes, Link, Redirect } from 'react-router-dom';
 import Counter from "./components/counter";
 import Counters from "./components/counters"; 
 import Nav from './components/nav'
@@ -13,8 +13,8 @@ class App extends Component {
     render(){
         return(
             <React.Fragment>
-                <Nav />
-                <Counters />
+            <Nav /> 
+            <Counters/>
             </React.Fragment>
         )
     }
