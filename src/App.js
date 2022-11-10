@@ -12,10 +12,14 @@ class App extends Component {
     }
     render(){
         return(
-            <React.Fragment>
-            <Nav /> 
-            <Counters/>
-            </React.Fragment>
+            <Router>
+            <Routes>
+              <Route path="/" element={<Counters />}>
+              </Route>
+              <Route path="/user" element={<userData />}>
+              </Route>
+            </Routes>
+          </Router>
         )
     }
 }
